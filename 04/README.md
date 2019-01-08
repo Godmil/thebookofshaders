@@ -182,7 +182,8 @@ void ofApp::draw(){
     shader.begin();
     shader.setUniform1f("u_time", ofGetElapsedTimef());
     shader.setUniform2f("u_resolution", ofGetWidth(), ofGetHeight());
-    ofRect(0,0,ofGetWidth(), ofGetHeight());
+    shader.setUniform2f("u_mouse", mouseX, ofGetHeight()-mouseY);
+	ofDrawRectangle(0.0, 0.0, ofGetWidth(), ofGetHeight());
     shader.end();
 }
 ```
